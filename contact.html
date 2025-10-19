@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MyPhoto Gallery - Explore curated photos, upload your own, and stay inspired."
+    />
+    <title>Contact — MyPhoto Gallery</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="title-text">
+          <a href="index.html">
+            <img
+              src="https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"
+              alt="logo"
+            />
+          </a>
+          <a class="logo" href="index.html"> MyPhoto Gallery</a>
+        </div>
+        <nav class="scroll-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="upload.html">Upload</a>
+          <a href="post.html">Post</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="news.html">News</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+          <a href="policy.html">Policy</a>
+        </nav>
+      </div>
+    </header>
+    <iframe
+      aria-label="Lo-fi background music player"
+      class="spotify"
+      style="border-radius: 12px"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+    <main class="container-main-content">
+      <h1>Contact Us</h1>
+      <p class="lead">Have a question or suggestion? Just tell us!</p>
+
+      <form
+        class="contact-form"
+        action="#"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <fieldset>
+          <legend>Your Information</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+          <br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+          <br />
+          <label for="Rpassword">Re-enter Password:</label>
+          <input type="password" id="Rpassword" name="Rpassword" />
+          <br />
+          <label for="phone">Phone number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+84 xxx xxx xxx"
+            pattern="[0-9]{9,}"
+          />
+          <br />
+          <label for="birthday">Date of Birth:</label>
+          <input type="date" id="birthday" name="birthday" />
+          <label for="profile_pic">Upload Profile Picture:</label>
+          <input type="file" id="profile_pic" name="profile_pic" />
+          <label for="fav_color">Favorite Color:</label>
+          <input type="color" id="fav_color" name="fav_color" />
+          <br />
+          <label for="country">Country:</label>
+          <input
+            list="countries"
+            id="country"
+            name="country"
+            placeholder="Start typing..."
+          />
+          <datalist id="countries">
+            <option value="United States"></option>
+            <option value="Vietnam"></option>
+            <option value="Japan"></option>
+            <option value="Germany"></option>
+          </datalist>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+
+          <label>Contact Method:</label>
+          <label
+            ><input type="radio" name="contact_method" value="email" checked />
+            Email</label
+          >
+          <label
+            ><input type="radio" name="contact_method" value="phone" />
+            Phone</label
+          >
+          <br />
+          <label for="satisfaction">How satisfied are you with our site?</label>
+          <input
+            type="range"
+            id="satisfaction"
+            name="satisfaction"
+            min="1"
+            max="10"
+            step="1"
+            value="7"
+          />
+          <br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Message Details</legend>
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="feedback">Feedback</option>
+            <option value="collab">Collaboration</option>
+            <option value="bug">Report an Issue</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <br />
+          <label>
+            <input type="checkbox" name="subscribe" />
+            Subscribe to newsletter
+          </label>
+        </fieldset>
+        <div class="form-actions" aria-live="polite">
+          <button type="reset" id="resetBtn" value="Reset">Reset</button>
+          <button type="submit" id="submitBtn">Send</button>
+          <div id="formErrors" style="color: #b91c1c; margin-left: 1rem"></div>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-footer-inner">
+        <p>&copy; 2025 MyPhoto Gallery. All rights reserved.</p>
+        <p>
+          Images: placeholders from Pexels and picjumbo. See
+          <a href="https://www.pexels.com/vi-vn/">Credits for Pexels</a> and
+          <a href="https://picjumbo.com/">Credits for picjumbo</a>.
+        </p>
+      </div>
+    </footer>
+    <script>
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const topic = document.getElementById("topic").value;
+        var password = document.getElementById("password").value.trim();
+        var Rpassword = document.getElementById("Rpassword").value.trim();
+
+        if (
+          !name === "" ||
+          !email === "" ||
+          !message === "" ||
+          topic === "" ||
+          password === "" ||
+          Rpassword === ""
+        ) {
+          alert("Please fill in all required fields!");
+          return false;
+        }
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+        if (!email.match(emailPattern)) {
+          alert("Invalid email format!");
+          return false;
+        }
+        if (phone && !/^[0-9]{9,15}$/.test(phone)) {
+          alert("Phone must be 9–15 digits.");
+          return false;
+        }
+
+        alert("Message sent!");
+        return true;
+      }
+    </script>
+  </body>
+</html>

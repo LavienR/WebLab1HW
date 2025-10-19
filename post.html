@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="MyPhoto Gallery - Explore curated photos, upload your own, and stay inspired."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body data-page="post">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="title-text">
+          <a href="index.html">
+            <img
+              src="https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"
+              alt="logo"
+            />
+          </a>
+          <a class="logo" href="index.html"> MyPhoto Gallery</a>
+        </div>
+        <nav class="scroll-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="upload.html">Upload</a>
+          <a href="post.html" aria-current="page">Post</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="news.html">News</a>
+          <a href="contact.html">Contact</a>
+          <a href="policy.html">Policy</a>
+        </nav>
+      </div>
+      <iframe
+        aria-label="Lo-fi background music player"
+        class="spotify"
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </header>
+
+    <main>
+      <article class="post-content">
+        <h1>Uploaded Post</h1>
+        <div class="post-image-container">
+          <figure class="post-image-box">
+            <img
+              id="uploadedImage"
+              src="https://via.placeholder.com/600x400?text=Uploaded+Image"
+              alt="Uploaded image preview"
+              class="post-image"
+            />
+          </figure>
+          <p id="post-des"></p>
+          <a href="upload.html" class="back">← Upload another image</a>
+        </div>
+      </article>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
